@@ -1,4 +1,4 @@
-# vue-2-crm
+# Customer Relationship Management on Vue 2
 
 ## Project setup
 ```
@@ -19,6 +19,3 @@ npm run build
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
