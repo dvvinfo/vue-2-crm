@@ -3,59 +3,48 @@
     <div class="page-title">
       <h3>Счет</h3>
 
-      <button class="btn waves-effect waves-light btn-small">
+      <button class="btn waves-effect waves-light btn-small" @click="refresh">
         <i class="material-icons">refresh</i>
       </button>
     </div>
-
-    <div class="row">
-      <div class="col s12 m6 l4">
-        <div class="card light-blue bill-card">
-          <div class="card-content white-text">
-            <span class="card-title">Счет в валюте</span>
-
-            <p class="currency-line">
-              <span>12.0 Р</span>
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col s12 m6 l8">
-        <div class="card orange darken-3 bill-card">
-          <div class="card-content white-text">
-            <div class="card-header">
-              <span class="card-title">Курс валют</span>
-            </div>
-            <table>
-              <thead>
-                <tr>
-                  <th>Валюта</th>
-                  <th>Курс</th>
-                  <th>Дата</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr>
-                  <td>руб</td>
-                  <td>12121</td>
-                  <td>12.12.12</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
+    <loader-component v-if="loading" />
+    <div class="row" v-else>
+      <home-bill-component :rates="currency.rates" />
+      <home-currency-component :rates="currency.rates" :date="currency.date" />
     </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-
+import HomeBillComponent from "@/components/HomeBillComponent.vue";
+import HomeCurrencyComponent from "@/components/HomeCurrencyComponent.vue";
+import LoaderComponent from "@/components/app/LoaderComponent.vue";
 export default {
   name: "HomeView",
-  components: {},
+  components: {
+    HomeBillComponent,
+    HomeCurrencyComponent,
+    LoaderComponent,
+  },
+  data() {
+    return {
+      loading: true,
+      currency: null,
+    };
+  },
+  async mounted() {
+    this.currency = await this.$store.dispatch("fetchCurrency");
+    console.log(this.currency);
+
+    this.loading = false;
+  },
+  methods: {
+    async refresh() {
+      this.loading = true;
+      this.currency = await this.$store.dispatch("fetchCurrency");
+      this.loading = false;
+    },
+  },
 };
 </script>
