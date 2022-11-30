@@ -41,8 +41,8 @@
           <span
             v-if="$v.limit.$dirty && !$v.limit.minValue"
             class="helper-text invalid"
-            >Минимальное значение {{ $v.limit.$params.minValue.min }}</span
-          >
+            >Минимальное значение {{ $v.limit.$params.minValue.min }}
+          </span>
         </div>
 
         <button class="btn waves-effect waves-light" type="submit">
