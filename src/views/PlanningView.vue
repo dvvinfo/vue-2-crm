@@ -48,7 +48,7 @@ export default {
 
     this.categories = categories.map((cat) => {
       const spend = records
-        .filter((r) => r.categoryId === cat.id)
+        .filter((r) => r.categoryID === cat.id)
         .filter((r) => r.type === "outcome")
         .reduce((total, record) => {
           return (total += +record.amount);
