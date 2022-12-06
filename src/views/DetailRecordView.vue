@@ -37,6 +37,11 @@
 <script>
 export default {
   name: "DetailRecordView",
+  metaInfo() {
+    return {
+      title: this.$title("Detail_title"),
+    };
+  },
   data() {
     return {
       record: null,

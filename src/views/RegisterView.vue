@@ -94,6 +94,11 @@
 import { email, required, minLength } from "vuelidate/lib/validators";
 export default {
   name: "RegisterView",
+  metaInfo() {
+    return {
+      title: this.$title("Register"),
+    };
+  },
   data() {
     return {
       email: "",

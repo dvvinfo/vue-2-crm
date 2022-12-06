@@ -1,5 +1,5 @@
 <template>
-  <div class="col s12 m6">
+  <div class="col s12 m6 mt-2">
     <div>
       <div class="page-subtitle">
         <h4>{{ "Edit" | localize }}</h4>
@@ -120,4 +120,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+@media screen and (max-width: 600px) {
+  .mt-2 {
+    margin-top: 20px;
+  }
+}
+</style>

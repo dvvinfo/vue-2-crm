@@ -26,6 +26,11 @@ import CreateComponent from "@/components/category/CreateComponent.vue";
 import EditComponent from "@/components/category/EditComponent.vue";
 export default {
   name: "CategoriesView",
+  metaInfo() {
+    return {
+      title: this.$title("Menu_Categories"),
+    };
+  },
   data() {
     return {
       categories: [],
