@@ -1,21 +1,44 @@
-# Customer Relationship Management on Vue 2
+# CRM on Vue 2
 
-## Project setup
+## В этом приложении:
 ```
-npm install
+Vue.js 2
+```
+```
+Vue-Router
+```
+```
+Vuex
+```
+### Граффик/диаграмма
+```
+```
+Построение графига с помощью vue-chartjs
+
+### Пагинация
+```
+```
+Пагинация с помощью vuejs-paginate
+```
+```
+### Регистрация/авторизация
+```
+```
+Валидания форм авторизации и регистрации с помощью vuelidate
+```
+```
+### REST API
+```
+```
+### Firebase
+```
+```
+Подключение к серверу и отпрака запроса и получение данных от базы данных firebase
+```
+```
+### Materialize css
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
+Посмотреть приложение можно [тут](https://vue-crm-d7709.firebaseapp.com)
 ```
